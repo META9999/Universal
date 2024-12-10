@@ -1,0 +1,60 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/META9999/Universal/refs/heads/main/Orion')))()
+local Window = OrionLib:MakeWindow({Name = " 심심해서 만든 유니버셜 스크립트", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local plr = game.Players.LocalPlayer
+local Tab = Window:MakeTab({
+	Name = "Home",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "리스폰",
+	Callback = function()
+		local position = plr.Character.HumanoidRootPart.Position
+        plr.Character:WaitForChild("Humanoid").Health = 0
+		wait(6)
+		plr.Character:MoveTo(position)
+  	end    
+})
+Tab:AddButton({
+	Name = "Infinity Yield",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "RemoteSpy",
+	Callback = function()
+		loadstring(game:HttpGet("https://gist.githubusercontent.com/Uylost/960b592d7fc7161c3e6de0047547d874/raw/cc0e9ca436afe2c3e253fdb357d1a61efd576098/gistfile1.txt"))()
+  	end    
+})
+Tab:AddSlider({
+	Name = "플레이어 속도",
+	Min = 0,
+	Max = 99,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = " ",
+	Callback = function(Value)
+		plr.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+Tab:AddSlider({
+	Name = "플레이어 점프 높이",
+	Min = 0,
+	Max = 99,
+	Default = 20,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = " ",
+	Callback = function(Value)
+		plr.Character.Humanoid.JumpPower = Value
+	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Discord",
+	Icon = "rbxassetid://18810599582",
+	PremiumOnly = false
+})
+Tab:AddParagraph("Discord","디스코드 초대코드 : https://discord.gg/JyByQS66hk")
+
